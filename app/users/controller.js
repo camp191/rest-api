@@ -16,10 +16,14 @@ const UsersController = {
 
     create(req, res) {
         const { email, password } = req.body 
-        Users.createnewUser(email, password).then( 
-         //   user => res.status(201).json({ 
-         //       user: UsersSerializer.for('create', user) })
-         console.log("then method")
+        Users.createnewUser(email, password)
+            .then((user) => {
+                console.log('THEN:::')
+                console.log(user)
+                // res.status(201).json({ 
+                //     user: UsersSerializer.for('create', user) 
+                // })
+            }
       )
     }
 }
